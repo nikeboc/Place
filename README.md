@@ -3,7 +3,7 @@
 rails s
 http://localhost:3000
 
-Place
+# Place
 アプリ概要：場所の貸し借りを行うアプリケーション
 
-# Place
+heroku: https://stark-spire-62695.herokuapp.com
