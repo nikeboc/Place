@@ -3,11 +3,16 @@
   <div class="container px-4 px-lg-5 my-5">
     <div class="text-center text-white">
       <h1 class="display-4 fw-bolder">Place</h1>
+      <% if logged_in? %>
+      <% else %>
       <p class="lead fw-normal text-white-50 mb-0">サインインして泊まりたい宿を探す、あなたの宿を貸すことができます</p>
       <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-danger" %>
+      <% end %>
     </div>
   </div>
 </header>
+
+
 <!-- Section -->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">

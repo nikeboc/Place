@@ -5,10 +5,11 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link active" %></li>
-                        <li class="nav-item"><%= link_to "About", about_path, class: "nav-link active" %></li>
+                        <li class="nav-item"><%= link_to "ホーム", root_path, class: "nav-link active" %></li>
+                        <li class="nav-item"><%= link_to "Placeとは", about_path, class: "nav-link active" %></li>
+                        <% if logged_in? %>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MyPage</a>
+                            <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">マイページ</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">お気に入りの宿</a></li>
                                 <li><hr class="dropdown-divider" /></li>
@@ -16,9 +17,12 @@
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#!">ログイン情報変更</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">ログアウト</a></li>
+                                <li><%= link_to "ログアウト", logout_path, class: "dropdown-item", method: :delete %></li>
                             </ul>
                         </li>
+                        <% else %>
+                        <li class="nav-item"><%= link_to "ログイン", login_path, class: "nav-link active" %></li>
+                        <% end %>
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">

@@ -1,0 +1,19 @@
+<% provide(:title, "ログイン") %>
+<h1>ログイン</h1>
+<div class="container">
+<div class="col-5 box">
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+     
+     <%= f.label :email, "メールアドレス"%>
+     <%= f.email_field :email, class: 'form-control' %>
+
+     <%= f.label :password, "パスワード" %>
+     <%= f.password_field :password, class: 'form-control' %>
+
+    <div class= "centerbtn">
+      <%= f.submit "Log in", class: "btn btn-outline-primary" %>
+    </div>
+    <% end %>
+    <p>Placeアカウントお持ちですか？<%= link_to "アカウント作成", signup_path %></p>
+    </div>
+</div>
