@@ -1,7 +1,7 @@
 <% provide(:title, 'アカウント作成') %>
 <h1>アカウント作成ページ</h1>
 <div class="container">
-<div class="col-6">
+<div class="col-5 box">
     <%= form_with(model: @user, local: true) do |f| %>
      <%= render 'shared/error_messages' %>
 
@@ -17,23 +17,10 @@
       <%= f.label :password_confirmation, "パスワード確認用" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "アカウント作成", class: "btn btn-danger" %>
+      <div class= "centerbtn">
+      <%= f.submit "アカウント作成", class: "btn btn-outline-success" %>
+      </div>
     <% end %>
     </div>
-</div>
-
-
-<div class="row g-3 align-items-center">
-  <div class="col-auto">
-    <label for="inputPassword6" class="col-form-label">Password</label>
-  </div>
-  <div class="col-8">
-    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-  </div>
-  <div class="col-auto">
-    <span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long.
-    </span>
-  </div>
 </div>
   
