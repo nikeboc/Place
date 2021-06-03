@@ -1,0 +1,25 @@
+<% provide(:title, 'ログイン情報更新') %>
+<h1>ログイン情報更新</h1>
+<div class="container">
+<div class="col-5 box">
+    <%= form_with(model: @user, local: true) do |f| %>
+     <%= render 'shared/error_messages' %>
+
+      <%= f.label :name, "名前"%>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "パスワード確認用" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <div class= "centerbtn">
+      <%= f.submit "更新する", class: "btn btn-outline-danger" %>
+      </div>
+    <% end %>
+    </div>
+</div>

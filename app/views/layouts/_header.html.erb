@@ -15,7 +15,7 @@
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#!">ユーザー情報編集</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">ログイン情報変更</a></li>
+                                <li><%= link_to "ログイン情報更新", edit_user_path(current_user), class: "dropdown-item" %></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "ログアウト", logout_path, class: "dropdown-item", method: :delete %></li>
                             </ul>
