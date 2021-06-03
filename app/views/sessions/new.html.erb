@@ -10,10 +10,17 @@
      <%= f.label :password, "パスワード" %>
      <%= f.password_field :password, class: 'form-control' %>
 
+     <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>ログイン状態を保つ</span>
+      <% end %>
+
     <div class= "centerbtn">
       <%= f.submit "Log in", class: "btn btn-outline-primary" %>
     </div>
     <% end %>
-    <p>Placeアカウントお持ちですか？<%= link_to "アカウント作成", signup_path %></p>
+    <div class="signuplink">
+    <%= link_to "アカウント作成はこちら", signup_path %>
+    </div>
     </div>
 </div>

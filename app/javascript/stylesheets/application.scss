@@ -28,9 +28,10 @@ h1 {
   }
 }
 
-// .field_with_errors {
-//   @extend .has-error;
-//   .form-control {
-//     color: $state-danger-text;
-//   }
-// }
+.checkbox {
+  margin-top: 10px;
+}
+.signuplink {
+  margin-top: 20px;
+  text-align: right;
+}
