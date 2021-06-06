@@ -1,5 +1,23 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-  <%= @user.email %>
-</h1>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <h2>Place一覧</h2>
+  <% if @user.posts.any? %>
+  <!-- Post -->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <%= render @posts %>
+                </div>
+            </div>
+        </section>
+        <% else %>
+        <h2>まだPlaceがありません</h2>
+        <% end %>
+</div>

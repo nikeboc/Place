@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   def new
@@ -36,6 +37,8 @@ class UsersController < ApplicationController
     end
   end
 
+  
+
   private
 
     def user_params
@@ -44,15 +47,6 @@ class UsersController < ApplicationController
     end
 
     # before
-
-    # ログインの確認
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
-    end
 
     # ログインユーザーが同一かどうか
     def correct_user

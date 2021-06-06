@@ -1,0 +1,15 @@
+<% provide(:title, "施設名") %>
+<h1><%= @post.title %></h1>
+<% if @post.image.attached? %>
+        <%= image_tag @post.display_image %>
+        <% else %>
+        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        <% end %>
+<h2><%= @post.location %></h2>
+<h2><%= @post.price %></h2>
+<h2><%= @post.content %></h2>
+<h2><%= @post.user.email %></h2>
+<h2><%= @post.user.name %></h2>
+<% if current_user?(@post.user) %>
+<%= link_to "delete", @post, method: :delete, data: { confirm: "Placeを削除しますか?" } %>
+                                       <% end %>
