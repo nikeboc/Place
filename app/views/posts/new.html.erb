@@ -1,23 +1,26 @@
 <% provide(:title, 'Place投稿') %>
-<h1>Placeを投稿</h1>
-<div class="container">
+<div class="row">
+<div class="blank"></div>
+<h1 class="display-5 fw-bolder">Placeを投稿</h1>
+<div class="borderbtm"></div>
+<div class="blank"></div>
 <div class="col-5 box">
 <%= form_with(model: @post, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :title, "タイトル"%>
-　<%= f.text_field :title, class: 'form-control' %>
+　<%= f.text_field :title,placeholder: "20文字以内", class: 'form-control' %>
 
 　<%= f.label :location, "所在地"%>
-　<%= f.text_field :location, class: 'form-control' %>
+　<%= f.text_field :location,placeholder: "20文字以内", class: 'form-control' %>
 
-　<%= f.label :price, "１日あたりの価格"%>
-　<%= f.text_field :price, class: 'form-control' %>
+　<%= f.label :price, "１日あたりの価格" %>
+　<%= f.text_field :price,placeholder: "10ケタ以内", class: 'form-control' %>
 
  
   <%= f.label :content, "Placeの詳細"%>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Placeの詳細な情報を記入してください", class: "form-control",size: "50x10"%>
+    <%= f.text_area :content, placeholder: "Placeの詳細な情報を記入してください（1000文字以内）", class: "form-control",size: "50x10"%>
   </div>
 
   <span class="image">

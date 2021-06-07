@@ -11,8 +11,6 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">マイページ</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">お気に入りの宿</a></li>
-                                <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "MyPlace", current_user, class: "dropdown-item" %></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "ログイン情報更新", edit_user_path(current_user), class: "dropdown-item" %></li>

@@ -1,10 +1,14 @@
 <% provide(:title, 'ログイン情報更新') %>
-<h1>ログイン情報更新</h1>
+<div class="row">
+<div class="blank"></div>
+<h1 class="display-5 fw-bolder">ログイン情報更新</h1>
+<div class="borderbtm"></div>
+<div class="blank"></div>
 <div class="col-5 box">
     <%= form_with(model: @user, local: true) do |f| %>
      <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name, "名前"%>
+      <%= f.label :name, "アカウント名"%>
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :email, "メールアドレス" %>
@@ -20,4 +24,5 @@
       <%= f.submit "更新する", class: "btn btn-outline-danger" %>
       </div>
     <% end %>
+    </div>
     </div>

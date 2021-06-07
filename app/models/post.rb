@@ -3,10 +3,10 @@ class Post < ApplicationRecord
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :content, presence: true, length: { maximum: 500 }
+  validates :content, presence: true, length: { maximum: 1000 }
   validates :title, presence: true, length: {maximum: 20 }
   validates :price, presence: true, length: {maximum: 10 }
-  validates :location, presence: true, length: {maximum: 10 }
+  validates :location, presence: true, length: {maximum: 20 }
   validates :image,   presence: true, content_type: { in: %w[image/jpeg image/gif image/png],
     message: "画像のフォーマットが正しくありません" },
     size:         { less_than: 5.megabytes,

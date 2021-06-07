@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Placeへようこそ!"
-      # ホーム画面に飛ばした方が良いかも
       redirect_to @user
     else
       render 'new'
@@ -30,7 +29,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = "ログイン情報を更新しました！"
+      flash[:success] = "ログイン情報を更新しました"
       redirect_to @user
     else
       render 'edit'

@@ -1,6 +1,7 @@
 <% provide(:title, "#{@user.name}さんのPlace") %>
 <div>
   <h2><%= "#{@user.name}さんのPlace" %></h2>
+  <div class="border"></div>
   <div class="row">
   <% if @user.posts.any? %>
         <section class="py-5">
