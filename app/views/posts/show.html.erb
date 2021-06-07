@@ -1,15 +1,27 @@
-<% provide(:title, "施設名") %>
-<h1><%= @post.title %></h1>
-<% if @post.image.attached? %>
-        <%= image_tag @post.display_image %>
-        <% else %>
-        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-        <% end %>
-<h2><%= @post.location %></h2>
-<h2><%= @post.price %></h2>
-<h2><%= @post.content %></h2>
-<h2><%= @post.user.email %></h2>
-<h2><%= @post.user.name %></h2>
+<% provide(:title, @post.title) %>
+<div class="row">
+<div class="col-lg-6">
+<h2><%= @post.title %></h2>
+<%= image_tag @post.display_image, class: "img-fluid rounded" %>
+<div class="blank"></div>
+<h3><%= "・所在地:#{@post.location}" %></h3>
+<h3><%= "・価格:#{@post.price}円/日" %></h3>
+<h3><%= "・ユーザー:#{@post.user.name}さん" %></h3>
+<h3><%= "・連絡先:#{@post.user.email}" %></h3>
+</div>
+
+<div class="col-lg-6">
+<div class="details">
+<h3>・詳細情報</h3>
+</div>
+<p><%= @post.content %></p>
 <% if current_user?(@post.user) %>
-<%= link_to "delete", @post, method: :delete, data: { confirm: "Placeを削除しますか?" } %>
-                                       <% end %>
+<div class="centerbtn">
+<%= link_to "Placeを削除", @post, method: :delete, data: { confirm: "Placeを削除しますか?" }, class: "btn btn-outline-danger" %>
+</div>
+<% end %>
+</div>
+</div>
+
+<div class="blank"></div>
+

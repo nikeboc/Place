@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: {maximum: 20 }
   validates :price, presence: true, length: {maximum: 10 }
   validates :location, presence: true, length: {maximum: 10 }
-  validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
+  validates :image,   presence: true, content_type: { in: %w[image/jpeg image/gif image/png],
     message: "画像のフォーマットが正しくありません" },
     size:         { less_than: 5.megabytes,
     message: "画像のサイズは５MB以下でお願いします" }

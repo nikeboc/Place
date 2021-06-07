@@ -5,10 +5,6 @@
 <%= form_with(model: @post, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <span class="image">
-    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-  </span>
-
   <%= f.label :title, "タイトル"%>
 　<%= f.text_field :title, class: 'form-control' %>
 
@@ -18,10 +14,18 @@
 　<%= f.label :price, "１日あたりの価格"%>
 　<%= f.text_field :price, class: 'form-control' %>
 
-  <%# <div class="field"> %>
-    <%= f.text_area :content, placeholder: "詳細な情報をお願いします" %>
-  <%# </div> %>
+ 
+  <%= f.label :content, "Placeの詳細"%>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Placeの詳細な情報を記入してください", class: "form-control",size: "50x10"%>
+  </div>
+
+  <span class="image">
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+  <div class="centerbtn">
   <%= f.submit "Post", class: "btn btn-outline-success" %>
+  </div>
 <% end %>
 </div>
 </div>

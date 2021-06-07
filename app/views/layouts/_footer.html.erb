@@ -1,10 +1,11 @@
 <footer class="py-5 bg-dark">
   <div class="container"><p class="m-0 text-center text-white">株式会社民Park | 代表:高島成生</p></div>
-  <nav> 
-    <ul>
-      <li class="nav-item"><%= link_to "お問い合わせ", contact_path %></li>
-      <li class="nav-item"><%= link_to "企業情報", coporate_path %></li>
-      <li class="nav-item"><%= link_to "SNSのリンク",'#' %></li>
-    </ul>
-  </nav>
+  <div class="container">
+  <nav class="navbar bg-dark">
+  <div class="row">
+    <%= link_to "お問い合わせ", contact_path, class: "navbar-brand text-white" %>
+    <%= link_to "企業情報", coporate_path, class: "navbar-brand text-white" %>
+  </div>
+</nav>
+</div>
 </footer>

@@ -1,6 +1,5 @@
 <% provide(:title, 'アカウント作成') %>
 <h1>アカウント作成</h1>
-<div class="container">
 <div class="col-5 box">
     <%= form_with(model: @user, local: true) do |f| %>
      <%= render 'shared/error_messages', object: f.object %>
@@ -22,5 +21,4 @@
       </div>
     <% end %>
     </div>
-</div>
   
