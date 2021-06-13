@@ -20,12 +20,23 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# heroku
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   # For details on connection pooling, see Rails configuration guide
+#   # https://railsguides.jp/configuring.html#データベース接続をプールする
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   database: Place_app_production
+#   username: Place_app
+#   password: <%= ENV['PLACE_APP_DATABASE_PASSWORD'] %>
+
+
+
 production:
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://railsguides.jp/configuring.html#データベース接続をプールする
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: Place_app_production
-  username: Place_app
-  password: <%= ENV['PLACE_APP_DATABASE_PASSWORD'] %>
+  <<: *default
+  database: rails_app_place_production
+  username: place_psql
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
