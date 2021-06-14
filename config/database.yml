@@ -35,7 +35,9 @@ test:
 
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: rails_app_place_production
   username: place_psql
   password: <%= Rails.application.credentials.db[:password] %>
