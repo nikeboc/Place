@@ -8,6 +8,9 @@ http://localhost:3000
 
 heroku: https://stark-spire-62695.herokuapp.com
 
+
+AWS:http://35.74.124.108
+
 使用方法:ヘッターの”Placeとは”から簡単な使い方を書いたページのリンクに飛べるようになっています。
 
 アカウント
