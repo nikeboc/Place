@@ -1,20 +1,26 @@
 <!-- Post -->
-<div class="col mb-5">
+<div class="col-5 mb-5">
     <div class="card h-20">
-        <!-- Place image-->
-        <%= image_tag post.display_image,class: "img-fluid rounded" %>
-        <!-- Place details-->
-        <div class="card-body p-4">
+        <%= image_tag post.home_image, class: "rounded mx-auto d-block p-2" %>
+        <div class="card-body p-2">
             <div class="text-center">
-                <!-- Place title-->
-                <h5 class="fw-bolder"><%= post.title %></h5>
-                <!-- Place price-->
-                <%= post.price %>
-            </div>
+                <h5 class="fw-bolder"><%= truncate((post.title), length: 7) %></h5>
+                </div>
+                <div class="text-left m-1">
+                <%= truncate(("所在地：#{post.location}"), length: 10) %>
+                </div>
+                <div class="text-left m-1">
+                <%= truncate(("価格：#{post.price}円/日"), length: 12) %>
+                </div>
+                <div class="text-center m-2">
+                <%= "お気に入り数：#{post.favorited_users.count}"%>
+                </div>
+                
         </div>
         <!-- Product actions-->
-        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><%= link_to "詳細", post, class: "btn btn-outline-dark mt-auto" %></div>
+        <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
+          
+          <div class="text-center"><%= link_to "詳細", post, class: "btn btn-outline-dark mt-auto" %></div>
         </div>
     </div>
 </div>　

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :posts, dependent: :destroy
+    has_many :favorites, dependent: :destroy
+    has_many :favorited_posts, through: :favorites, source: :post
     attr_accessor :remember_token
     before_save { email.downcase! }
     validates :name, presence: true, length: {maximum: 20 }
@@ -37,5 +39,10 @@ class User < ApplicationRecord
   # ユーザーのログイン情報を破棄する
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  # いいねしてるかどうか
+  def already_favorited?(post)
+    self.favorites.exists?(post_id: post.id)
   end
 end

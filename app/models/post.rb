@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
+  # 投稿を消した時に消せるようにするかは後で決める
+  has_many :favorites
+  has_many :favorited_users, through: :favorites, source: :user
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
@@ -12,7 +15,13 @@ class Post < ApplicationRecord
     size:         { less_than: 5.megabytes,
     message: "画像のサイズは５MB以下でお願いします" }
 
-  # 表示用のリサイズ済み画像を返す
+
+  # ホーム画面用のサイズ
+  def home_image
+    image.variant(resize_to_limit: [180, 90])
+  end
+
+  # 詳細画面用のサイズ
   def display_image
     image.variant(resize_to_limit: [450, 300])
   end

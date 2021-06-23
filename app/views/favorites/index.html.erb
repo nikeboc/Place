@@ -1,0 +1,19 @@
+<% provide(:title, "#{@user.name}さんのお気に入りPlace") %>
+<div>
+  <h2><%= "#{@user.name}さんのお気に入りPlace" %></h2>
+  <div class="border"></div>
+  <div class="row">
+  <% if @user.posts.any? %>
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <%= render @posts %>
+                </div>
+            </div>
+        </section>
+        <% else %>
+        <h2 class="py-5 text-center">まだお気に入りPlaceはありません</h2>
+        <% end %>
+        </div>
+</div>
+<div class="blankbtm"></div>

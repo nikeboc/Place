@@ -13,6 +13,8 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><%= link_to "MyPlace", current_user, class: "dropdown-item" %></li>
                                 <li><hr class="dropdown-divider" /></li>
+                                <li><%= link_to "お気に入りのPlace", user_favorites_path(current_user), class: "dropdown-item" %></li>
+                                <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "ログイン情報更新", edit_user_path(current_user), class: "dropdown-item" %></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "ログアウト", logout_path, class: "dropdown-item", method: :delete %></li>
@@ -22,7 +24,7 @@
                         <li class="nav-item"><%= link_to "ログイン", login_path, class: "nav-link active" %></li>
                         <% end %>
                     </ul>
-                    <%= link_to "場所を提供する", newplace_path, class: "btn btn-outline-dark" %>
+                    <%= link_to "場所を提供する", new_post_path, class: "btn btn-outline-dark" %>
                 </div>
             </div>
         </nav>
