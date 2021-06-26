@@ -18,7 +18,7 @@ class Post < ApplicationRecord
 
   # ホーム画面用のサイズ
   def home_image
-    image.variant(resize_to_limit: [160, 80])
+    image.variant(resize_to_limit: [200, 100])
   end
 
   # 詳細画面用のサイズ

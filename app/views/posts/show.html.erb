@@ -5,10 +5,10 @@
 <div class="border m-2"></div>
 <%= image_tag @post.display_image, class: "img-fluid rounded mx-auto d-block" %>
 <div class="blank border"></div>
-<h3 class="p-1"><%= "・所在地:#{@post.location}" %></h3>
-<h3 class="p-1"><%= "・価格:#{@post.price}円/日" %></h3>
-<h3 class="p-1"><%= "・ユーザー:#{@post.user.name}さん" %></h3>
-<h3 class="p-1"><%= "・連絡先:#{@post.user.email}" %></h3>
+<h5 class="p-1"><%= "・所在地:#{@post.location}" %></h5>
+<h5 class="p-1"><%= "・価格:#{@post.price}円/日" %></h5>
+<h5 class="p-1"><%= "・ユーザー:#{@post.user.name}さん" %></h5>
+<h5 class="p-1"><%= "・連絡先:#{@post.user.email}" %></h5>
 <div class="text-center">
 <% if current_user.already_favorited?(@post) %>
  <div class="p-1">
