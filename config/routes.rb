@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # root 'static_pages#home'
   root 'posts#index'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
