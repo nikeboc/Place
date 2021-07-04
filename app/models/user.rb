@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_many :posts, dependent: :destroy
     has_many :favorites, dependent: :destroy
-    has_many :favorited_posts, through: :favorites, source: :post
+    has_many :favorited_posts, through: :favorites, source: :post, dependent: :destroy
     attr_accessor :remember_token
     before_save { email.downcase! }
     validates :name, presence: true, length: {maximum: 20 }

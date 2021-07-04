@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
   # 投稿を消した時に消せるようにするかは後で決める
-  has_many :favorites
-  has_many :favorited_users, through: :favorites, source: :user
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites, source: :user, dependent: :destroy
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
