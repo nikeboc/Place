@@ -5,7 +5,7 @@
         <%= image_tag post.home_image, class: "rounded mx-auto d-block p-2" %>
         <div class="card-body p-2">
             <div class="text-center">
-              <h5 class="fw-bolder"><%= truncate((post.title), length: 7) %></h5>
+              <h5 class="fw-bolder"><%= truncate((post.title), length: 5) %></h5>
             </div>
             <div class="text-center m-1">
               <%= truncate((post.location), length: 4) %>
