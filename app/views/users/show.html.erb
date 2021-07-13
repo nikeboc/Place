@@ -1,6 +1,6 @@
 <% provide(:title, "#{@user.name}さんのPlace") %>
-<div>
-  <h2><%= "#{@user.name}さんのPlace" %></h2>
+
+  <h3><%= "#{@user.name}さんのPlace" %></h3>
   <div class="border"></div>
   <div class="row">
   <% if @user.posts.any? %>
@@ -15,5 +15,3 @@
         <h2 class="py-5 text-center">まだPlaceがありません</h2>
         <% end %>
         </div>
-</div>
-<div class="blankbtm"></div>

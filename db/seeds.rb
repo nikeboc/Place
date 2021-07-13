@@ -1,12 +1,12 @@
-User.create!(name:  "Sample",
-    email: "sample@example.com",
+User.create!(name:  "トマト",
+    email: "tomato@example.com",
     password:              "samplepass",
     password_confirmation: "samplepass",
     id: 1
     )
 
-User.create!(name:  "hoge",
-    email: "hoge@example.com",
+User.create!(name:  "パスタ",
+    email: "pasuta@example.com",
     password:              "samplepass",
     password_confirmation: "samplepass",
     id: 2
