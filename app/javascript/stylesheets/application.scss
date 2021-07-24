@@ -70,6 +70,9 @@ h3 {
 .left {
   float: left;
 }
+.center {
+  float: center;
+}
 
 a {
   text-decoration: none;
@@ -88,3 +91,11 @@ body {
 main {
   flex: 1;
 }
+
+// ユーザーイメージ
+// .userimage {
+//   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+//   width: 100px;  /* 縦横を同じ値にする */
+//   height: 100px;  /* 縦横を同じ値にする */
+//   object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+// }

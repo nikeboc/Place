@@ -14,7 +14,7 @@
  </div>
 <% else %>
 <div class="p-1">
-  <%= link_to '', post_favorites_path(@post), method: :post, class: "far fa-star left" %>
+  <%= link_to "", post_favorites_path(@post), method: :post, class: "far fa-star left" %>
   <p >「<%= @post.favorites.count %>人がお気に入り」</p>
   </div>
 <% end %>
