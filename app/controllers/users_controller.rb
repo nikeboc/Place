@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :profile, :update]
+  before_action :correct_user,   only: [:edit, :profile, :update]
+  before_action :before_request,   only: [:edit, :profile]
+
 
   def show
     @user = User.find(params[:id])
@@ -26,13 +28,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def profile
+    @user = User.find(params[:id])
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = "ログイン情報を更新しました"
+      flash[:success] = "アカウント情報を更新しました"
       redirect_to @user
     else
-      render 'edit'
+      render_before_action
     end
   end
 
@@ -52,4 +58,15 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
+
+    # 前のactionを記憶
+    def before_request
+    session[:forwarding_action] = action_name
+    end
+
+    # 前ページリロード
+    def render_before_action
+    render session[:forwarding_action]
+    session.delete(:forwarding_action)
+  end
 end
