@@ -1,5 +1,5 @@
 <% provide(:title, "#{@user.name}さんのお気に入りPlace") %>
-  <h3><%= "#{@user.name}さんのお気に入りPlace" %></h3>
+  <h4><%= "#{@user.name}さんのお気に入りPlace" %></h4>
   <div class="border"></div>
   <div class="row">
   <% if @user.favorites.any? %>
@@ -11,6 +11,6 @@
             </div>
         </section>
         <% else %>
-        <h3 class="py-5 text-center">まだお気に入りPlaceはありません</h3>
+        <p class="py-5 text-center">まだお気に入りPlaceはありません</p>
         <% end %>
         </div>

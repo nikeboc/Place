@@ -16,5 +16,12 @@ class FavoritesController < ApplicationController
     @posts = current_user.favorited_posts
     @user = current_user
   end
+
+  private
+  # ログインユーザーが同一かどうか
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
 end
 

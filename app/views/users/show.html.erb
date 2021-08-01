@@ -1,6 +1,6 @@
 <% provide(:title, "#{@user.name}さんのPlace") %>
   <div class="row">
-  <div>
+  <div class="col">
   <% if @user.image != nil %>
   <%= image_tag @user.mypage_image, class: "rounded mx-auto d-block p-2 left" %>
   <% else %>
@@ -14,9 +14,16 @@
   <p class="py-5 text-center">まだ紹介文がありません</p>
   <% end %>
   <div class="position-relative py-5">
-  <div class="position-absolute top-0 start-50 translate-middle"><%= link_to "マイページ編集", profile_path %></div>
+  <div class="position-absolute top-0 start-50 translate-middle"><%= link_to "マイページ編集", profile_path, class: 'linktext' %></div>
 </div>
-  <h3><%= "#{@user.name}さんのPlace" %></h3>
+</div>
+<div class="row">
+<div class="col">
+  <h4><%= "#{@user.name}さんのPlace" %></h4>
+</div>
+</div>
+  <div class="row">
+  <div class="col">
   <div class="border m-1"></div>
   <% if @user.posts.any? %>
         <section class="py-5">
@@ -30,5 +37,8 @@
         <p class="py-5 text-center">まだPlaceがありません</p>
         <% end %>
         </div>
+        </div>
+
+
 
         </div>

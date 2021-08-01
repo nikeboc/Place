@@ -2,14 +2,18 @@ User.create!(name:  "トマト",
     email: "tomato@example.com",
     password:              "samplepass",
     password_confirmation: "samplepass",
-    id: 1
+    id: 1,
+    content: "こんにちは",
+    image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/tomato.jpg"), filename:"tomato.jpg")
     )
 
 User.create!(name:  "パスタ",
     email: "pasuta@example.com",
     password:              "samplepass",
     password_confirmation: "samplepass",
-    id: 2
+    id: 2,
+    content: "こんにちは",
+    image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/pasuta.jpeg"), filename:"pasuta.jpeg")
     )
 
 
