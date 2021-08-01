@@ -1,10 +1,18 @@
 <% provide(:title, "#{@user.name}さんのPlace") %>
   <div class="row">
-  <div class="">
+  <div>
+  <% if @user.image != nil %>
+  <%= image_tag @user.mypage_image, class: "rounded mx-auto d-block p-2 left" %>
+  <% else %>
   <%= image_tag 'noimage.png', size: "75x75", class: "rounded mx-auto d-block p-2 left" %>
+  <% end %>
   <h3><%= @user.name %></h3>
   <div class="border m-1"></div>
+  <% if @user.content? %>
+  <p class="py-5 text-center"><%= @user.content %></p>
+  <% else %>
   <p class="py-5 text-center">まだ紹介文がありません</p>
+  <% end %>
   <div class="position-relative py-5">
   <div class="position-absolute top-0 start-50 translate-middle"><%= link_to "マイページ編集", profile_path %></div>
 </div>

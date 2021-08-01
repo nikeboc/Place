@@ -15,6 +15,8 @@
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "お気に入りのPlace", user_favorites_path(current_user), class: "dropdown-item" %></li>
                                 <li><hr class="dropdown-divider" /></li>
+                                <li><%= link_to "マイページ編集", profile_path(current_user), class: "dropdown-item" %></li>
+                                <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "ログイン情報更新", edit_user_path(current_user), class: "dropdown-item" %></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><%= link_to "ログアウト", logout_path, class: "dropdown-item", method: :delete %></li>

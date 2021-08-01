@@ -8,9 +8,6 @@
     <%= form_with(model: @user, local: true) do |f| %>
      <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name, "アカウント名" %>
-      <%= f.text_field :name, class: 'form-control' %>
-
       <%= f.label :email, "メールアドレス" %>
       <%= f.email_field :email, class: 'form-control' %>
 

@@ -7,11 +7,18 @@
 <div class="col-5 box">
     <%= form_with(model: @user, local: true) do |f| %>
      <%= render 'shared/error_messages', object: f.object %>
-     <p><%= controller.action_name %></p>
 
       <%= f.label :name, "アカウント名" %>
       <%= f.text_field :name, class: 'form-control' %>
 
+      <%= f.label :content, "あなたの詳細情報"%>
+  　　 <div class="field">
+    　 <%= f.text_area :content, placeholder: "あなたの詳細な情報を自由に記入してください（1000文字以内）", class: "form-control",size: "50x10"%>
+  　　 </div>
+
+  <span class="image">
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
       <div class= "centerbtn">
       <%= f.submit "更新する", class: "btn btn-outline-danger" %>
       </div>
