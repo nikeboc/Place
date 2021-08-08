@@ -1,10 +1,11 @@
 <% provide(:title, "#{@user.name}さんのPlace") %>
   <div class="row">
   <div class="col">
-  <% if @user.image != nil %>
-  <%= image_tag @user.mypage_image, class: "rounded mx-auto d-block p-2 left" %>
+  
+  <% if @user.image.attached? %>
+  <%= image_tag @user.mypage_image, class: "rounded-circle d-block pt-1 left" %>
   <% else %>
-  <%= image_tag 'noimage.png', size: "75x75", class: "rounded mx-auto d-block p-2 left" %>
+  <%= image_tag 'noimage.png', size: "50x50", class: "rounded-circle d-block pt-1 left" %>
   <% end %>
   <h3><%= @user.name %></h3>
   <div class="border m-1"></div>

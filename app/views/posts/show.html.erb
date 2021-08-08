@@ -1,32 +1,55 @@
 <% provide(:title, @post.title) %>
 <div class="row">
+
 <div class="col-lg-6">
-<div class="details">
-<h3 class=""><%= @post.title %></h3>
-</div>
-<div class="border m-1"></div>
-<%= image_tag @post.display_image, class: "img-fluid rounded mx-auto d-block" %>
-<div class="blank border"></div>
+<div class="">
+<h3 class="left"><%= @post.title %></h3>
 <% if current_user.already_favorited?(@post) %>
- <div class="p-1">
-  <%= link_to "", post_favorite_path(@post), method: :delete, class: "fas fa-star left" %>
-  <p >「<%= @post.favorites.count %>人がお気に入り」</p>
+ <div class="pt-3">
+  <%= link_to "", post_favorite_path(@post), method: :delete, class: "fas fa-heart left" %>
+  <p>「保存済み」</p>
  </div>
 <% else %>
-<div class="p-1">
-  <%= link_to "", post_favorites_path(@post), method: :post, class: "far fa-star left" %>
-  <p >「<%= @post.favorites.count %>人がお気に入り」</p>
+<div class="pt-3">
+  <%= link_to "", post_favorites_path(@post), method: :post, class: "far fa-heart left" %>
+  <p>「保存」</p>
   </div>
 <% end %>
-<h5 class="p-1"><%= "・所在地:#{@post.location}" %></h5>
-<h5 class="p-1"><%= "・価格:#{@post.price}円/日" %></h5>
-<h5 class="p-1"><%= "・ユーザー:#{@post.user.name}さん" %></h5>
-<h5 class="p-1"><%= "・連絡先:#{@post.user.email}" %></h5>
+</div>
 </div>
 
 <div class="col-lg-6">
+<%= link_to(@post.user, class: '') do %>
+<p class="pt-3 left"><%= "ホスト:#{@post.user.name}" %></p>
+<%= image_tag @post.user.mypage_image, class: "rounded-circle d-block pt-2" %>
+<% end %>
+</div>
+
+<div class="border m-1"></div>
+</div>
+
+<div class="row">
+
+<div class="col-lg-6">
+<%= image_tag @post.display_image, class: "img-fluid rounded mx-auto d-block" %>
+</div>
+
+<div class="col-lg-6">
+<div class="p-3">
+<h5 class="p-3"><%= "・所在地:#{@post.location}" %></h5>
+<h5 class="p-3"><%= "・価格:#{@post.price}円/日" %></h5>
+</div>
+</div>
+
+</div>
+
+<div class="row">
+<div class="border m-1"></div>
+</div>
+
+<div class="row">
 <div class="details">
-<h3>ー  詳細情報  ー</h3>
+<h3 class="text-center">ー  詳細情報  ー</h3>
 </div>
 <div class="border m-1"></div>
 <p class="p-2"><%= @post.content %></p>
@@ -38,7 +61,5 @@
 </div>
 <% end %>
 </div>
-</div>
-<div class="blank"></div>
 
 

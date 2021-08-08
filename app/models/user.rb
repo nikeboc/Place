@@ -54,11 +54,12 @@ class User < ApplicationRecord
 
   # マイページサイズの画像
   def mypage_image
+    image.variant(resize_to_limit: [50, 50])
+  end
+  
+  # ポストサイズの画像
+  def post_image
     image.variant(resize_to_limit: [75, 75])
   end
 
-  # # 小サイズの画像
-  # def mini_image
-  #   image.variant(resize_to_limit: [160, 80])
-  # end
 end
